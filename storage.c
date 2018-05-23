@@ -70,6 +70,23 @@ int main(){
 		}
 	}
 
+	// ask user for the size of shirt they would like until you get one of the three options, S, M, L. Note that I got an infinite program when I did not add the scanf portion that saves the variable. 
+	char sizeOfShirt;
+
+	do{
+		printf("What size of shirt? (S, M, L)\n");
+		scanf(" %c", &sizeOfShirt);
+	} while (sizeOfShirt != 'S' && sizeOfShirt != 'M' && sizeOfShirt != 'L');
+
+	// for loop
+	// use continue to skip and increment the counter. In this case, we are using continue to only print out odd numbers.
+	for(int counter = 0; counter <= 40; counter++){
+
+		if((counter % 2) == 0) continue;
+
+		printf("%d\n", counter);
+	}
+
 }
 
 
