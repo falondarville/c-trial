@@ -24,8 +24,56 @@ int main(){
 
 	// 00000000 is one byte made up of 8 bits
 
+	long int bigInt = 2147483648;
 
+	// this gets a negative number because it exceeds the maximum value allowed for an int. Change the final number to 7 and you will get a positive number.
+	printf("I'm bigger than you may have heard %d\n\n", bigInt);
 
+	// program to tell user the top value for the number of bits that they input
+	int numberHowBig = 0;
 
+	// 0: print what is given
+	// 1: print what is given
+	// 2: 1 + 2 = 3 (11 in binary)
+	// 3: 3 + 4 = 7	(111 in binary)
+	// 4: 7 + 8 = 15 (1111 in binary)
+
+	printf("How many bits? \n");
+	scanf(" %d", &numberHowBig);
+	printf("\n\n");
+
+	int myIncrementor = 1, myMultiplier = 1, finalValue = 1;
+
+	// note that if you type in 32, you will get negative numbers because 31 is the largest bit size that can be stored.
+	while(myIncrementor < numberHowBig){
+		myMultiplier *= 2;
+		finalValue = finalValue + myMultiplier;
+		myIncrementor++;
+	}
+
+	if((numberHowBig == 0) || (numberHowBig ==1)){
+		printf("Top value: %d\n\n", numberHowBig);
+	} else {
+		printf("Top value: %d\n\n", finalValue);
+	}
+
+	// user guesses a secret number
+	int secretNumber = 10, numberGuessed = 0;
+
+	while(1){
+		printf("Guess my secret number\n");
+		scanf(" %d", &numberGuessed);
+
+		if(numberGuessed == secretNumber){
+			printf("You got it!\n");
+			break;
+		}
+	}
 
 }
+
+
+
+
+
+
